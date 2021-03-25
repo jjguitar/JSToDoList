@@ -18,6 +18,7 @@ export default class View {
     // for (let toDo of toDos) {
     //   this.createRow(toDo)
     // }
+    toDos.forEach((toDo) => this.createRow(toDo))
   }
 
   addToDo(title, description) {
@@ -53,7 +54,7 @@ export default class View {
 
     const checkbox = document.createElement('input')
     checkbox.type = 'checkbox'
-    checkbox.checked = checkbox.completed
+    checkbox.checked = toDo.completed
     checkbox.onclick = () => this.toggleCompleted(toDo.id)
     row.children[2].appendChild(checkbox)
 
