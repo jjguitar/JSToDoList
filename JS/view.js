@@ -73,7 +73,12 @@ export default class View {
     //console.log(toDo.id)
     editBtn.setAttribute('data-toggle', 'modal')
     editBtn.setAttribute('data-target', '#modal')
-    editBtn.onclick = () => this.modal.setValues(toDo)
+    editBtn.onclick = () => this.modal.setValues({
+      id: toDo.id,
+      title: row.children[0].innerText,
+      description: row.children[1].innerText,
+      completed: row.children[2].children[0].checked
+    })
       //console.log(e.target.parentNode)
     row.children[3].appendChild(editBtn)
 

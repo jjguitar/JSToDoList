@@ -27,7 +27,7 @@ export default class Model {
 
   getToDos() {
     // console.log(this.toDos)
-    return this.toDos
+    return this.toDos.map((toDo) => ({...toDo}))
   }
 
   findToDo(id) {
